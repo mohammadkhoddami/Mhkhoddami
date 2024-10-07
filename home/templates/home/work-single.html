@@ -1,0 +1,55 @@
+{% extends "_base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+	<body>
+	
+	<div id="colorlib-page">
+		<div id="colorlib-work">
+			<div class="container">
+				<div class="row text-center">
+					<h2 class="bold">{% trans "Works" %}</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
+						<span>{% trans "Project" %}</span>
+						<h2>{{ work.title }}</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="rotate">
+							<h2 class="heading">Project</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="work-entry animate-box">
+							<a href="work.html" class="work-img" style="background-image: url(images/work-1.jpg);">
+							</a>
+							<div class="col-md-8 col-md-offset-2">
+								<div class="desc">
+									<h2>{{ work.title }}</h2>
+									<p>{{ work.body|linebreaks }}</p>
+									{% if work.image_2 %}
+									<img class="img-responsive" src="{{ work.image_2.url }}" alt="html5 bootstrap template by colorlib.com"><br>
+									{% endif %}
+									<p class="read"><a href="#">{% trans "Live Preview" %}</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+
+
+    {% endblock content %}
+
+	</body>
+</html>
+

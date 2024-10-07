@@ -1,0 +1,43 @@
+{% extends "_base.html" %}
+{% load i18n %}
+{% block content %}
+	<body>
+	
+	<div id="colorlib-page">
+		<div id="colorlib-about">
+			<div class="container">
+				<div class="row text-center">
+					<h2 class="bold">{% trans "About" %}</h2>
+				</div>
+				<div class="row row-padded-bottom">
+					<div class="col-md-5 animate-box">
+						<img class="img-responsive about-img" src="images/about.jpg" alt="html5 bootstrap template by colorlib.com">
+					</div>
+					<div class="col-md-6 col-md-push-1 animate-box">
+						<div class="about-desc">
+							<h2><span>{{ about_me.first_name }}</span><span>{{ about_me.last_name }}</span></h2>
+							<div class="desc">
+								<div class="rotate">
+									<h2 class="heading">"About"</h2>
+								</div>
+								<p>{{ about_me.mini_bio }}</p>
+								<p class="colorlib-social-icons">
+									<a href="#"><i class="icon-facebook4"></i></a>
+									<a href="#"><i class="icon-twitter3"></i></a>
+									<a href="#"><i class="icon-googleplus"></i></a>
+									<a href="#"><i class="icon-dribbble2"></i></a>
+								</p>
+								<p><a href="work.html" class="btn btn-primary btn-outline">{% trans "View My Works" %}</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    {% endblock content %}
+
+	</body>
+</html>
+

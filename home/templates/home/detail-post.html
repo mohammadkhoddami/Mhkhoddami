@@ -1,0 +1,50 @@
+{% extends "_base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+	<body>
+	
+	<div id="colorlib-page">
+		<div id="colorlib-featured-flex">
+			<div class="one-forth">
+				<div class="text-inner">
+				</div>
+			</div>
+			<div class="three-forth">
+				<div class="intro-img" style="background-image: url('{{ blog.image.url }}');"></div>
+			</div>
+		</div>
+
+		<div id="colorlib-blog">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="blog-entry animate-box col-pb-sm">
+							<a href="blog.html" class="blog-img"><img src="{{ blog.image.url }}" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+							<div class="desc">
+								<h3><a href="blog.html">{{ post.title }}</a></h3>
+								<span><small>{{ post.created_at }} </small></span>
+								<p class="first-letra">{{ post.body|linebreaks }}</p>
+								<p class="tags">
+									<a href="#">Fashion</a>
+									<a href="#">Beauty</a>
+									<a href="#">Health</a>
+									<a href="#">BLog</a>
+									<a href="#">Travel</a>
+									<a href="#">Summer</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+    {% endblock content %}
+
+	</body>
+</html>
+

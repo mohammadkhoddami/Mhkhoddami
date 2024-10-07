@@ -1,0 +1,84 @@
+{% extends "_base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+	<body>
+	
+	<div id="colorlib-page">
+		
+		<div id="colorlib-contact">
+			<div class="container">
+				<div class="row text-center">
+					<h2 class="bold">{% trans "Contact" %}</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
+						<span>{% trans "Contact" %}</span>
+						<h2>{% trans "Contact Me" %}</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="rotate">
+							<h2 class="heading">Contact</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0">
+						<div class="row">
+							<div class="col-md-4 animate-box">
+								<h3>{{ contact_info.title }}</h3>
+								<ul class="contact-info">
+									<li><span><i class="icon-map5"></i></span>{{ contact_info.city }}</li>
+									<li><span><i class="icon-phone4"></i></span>{{ contact_info.phone_number }}</li>
+									<li><span><i class="icon-envelope2"></i></span><a href="#">{{ contact_info.email }}</a></li>
+									<li><span><i class="icon-globe3"></i></span><a href="{{ contact_info.linkedin }}">{% trans "Linkedin" %}</a></li>
+								</ul>
+							</div>
+							<div class="col-md-7 col-md-push-1 animate-box">
+								<div class="row">
+									<form action="" method="post">
+										{% csrf_token %}
+									<div class="col-md-12">
+										<div class="form-group">
+											<textarea name="message" class="form-control" id="" cols="30" rows="7" placeholder='{% trans "Message" %}'></textarea>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input type="text" name='name' class="form-control" placeholder="{% trans 'Name' %}">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input type="text" name='email' class="form-control" placeholder="{% trans 'Email' %}">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input type="text" name='phone_number' class="form-control" placeholder="{% trans 'Phone Number' %}">
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="submit" value="Send Message" class="btn btn-primary">
+										</div>
+									</div>
+								</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+    {% endblock content %}
+
+	</body>
+</html>
+

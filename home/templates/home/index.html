@@ -1,0 +1,190 @@
+{% extends "_base.html" %}
+{% load i18n %}
+{% load jformat %}
+
+{% block content %}
+{% load spilit_tag %}
+
+	<body>
+
+	<div id="colorlib-page">
+
+		<div id="colorlib-about">
+			<div class="container">
+				<div class="row text-center">
+					<h2 class="bold">{% trans "About" %}</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-5 animate-box">
+						<div class="owl-carousel3">
+							<div class="item">
+								<img class="img-responsive about-img" src="{{ index_detail.image_1.url }}" alt="html5 bootstrap template by colorlib.com">
+							</div>
+							<div class="item">
+								<img class="img-responsive about-img" src="{{index_detail.image_2.url}}" alt="html5 bootstrap template by colorlib.com">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-md-push-1 animate-box">
+						<div class="about-desc">
+							<div class="owl-carousel3">
+								<div class="item">
+									<h2><span>{{ index_detail.first_name }}</span><span>{{ index_detail.last_name }} </span></h2>
+								</div>
+								<div class="item">
+									<h2><span>I'm</span><span>BackEnd Developer</span></h2>
+								</div>
+							</div>
+							<div class="desc">
+								<div class="rotate">
+									<h2 class="heading">About</h2>
+								</div>
+								<div lang='fa' dir='rtl'>
+								<p>{{ about_me.mini_bio|linebreaks }}</p>
+								</div>
+								<p><a href="#" class="btn btn-primary btn-outline">{% trans "Contact Me!" %}</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="colorlib-services">
+			<div class="container">
+				<div class="row text-center">
+					<h2 class="bold">{% trans "Experience" %}</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="services-flex">
+							<div class="one-third">
+								<div class="row">
+									<div class="col-md-12 col-md-offset-0 animate-box intro-heading">
+										<span>{% trans "My Experiences" %}</span>
+										<h2>{% trans "Here Are Some of My Experience" %}</h2>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="rotate">
+											<h2 class="heading">Experiences</h2>
+										</div>
+									</div>
+									<div class="col-md-6">										
+										{% for experience in experience %}
+										<div class="services animate-box">
+											<div class="services animate-box lang="fa" dir="rtl"">
+												<h3>{{ experience.subtitle }}</h3>
+												<small>{{ experience.since|jformat:"%B %Y"  }}</small> {% if experience.current %}<p>-{% trans "Current" %}</p>{% else %} - <small> {{ experience.till|jformat:"%B %Y" }} </small>
+												{% endif %}
+												<p> {{ experience.body }} </p>
+												<hr>
+											</div>
+										</div>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+							<div class="one-forth services-img" style="background-image: url('{{ index_detail.exprience_image.url }}');">
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="colorlib-work">
+			<div class="container">
+				<div class="row text-center">
+					<h2 class="bold">{% trans "Works" %}</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
+						<span>{% trans "Portfolio" %}</span>
+						<h2>{% trans "Done Projects" %}</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="rotate">
+							<h2 class="heading">Projects</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+				{% for work in works %}
+					<div class="col-md-12">
+						<div class="work-entry animate-box">
+							<a href="work.html" class="work-img" style="background-image: url('{{ work.image.url }}');">
+								<div class="display-t">
+									<div class="work-name">
+										<h2 lang='fa' dir='rtl'>{{ work.title }}</h2>
+									</div>
+								</div>
+							</a>
+							<div class="col-md-4 col-md-offset-4">
+								<div class="desc">
+									<p lang='fa' dir='rtl'>{{ work.body }}</p>
+									<p class="read"><a href="#">{% trans "View details" %}</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+		<div id="colorlib-blog">
+			<div class="container">
+				<div class="row text-center">
+					<h2 class="bold">{% trans "Blog" %}</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
+						<span>{% trans "Blog" %}</span>
+						<h2>{% trans "Read Our Case" %}</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="rotate">
+							<h2 class="heading">Our Blog</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row animate-box">
+						{% for post in blog %}
+						<div class="item">
+							<div class='card-body'>
+							<div class="col-md-4">
+								<div class="article">
+									<a href="blog.html" class="blog-img">
+										<img class="img-responsive" src="{{ post.image.url }}" alt="ops!">
+										<div class="overlay"></div>
+										<div class="link">
+											<span class="read">{% trans "Read more" %}</span>
+										</div>
+									</a>
+									<div class="desc">
+										<span class="meta">{{ post.created_at }}</span>
+										<div lang='fa' dir='rtl'>
+										<h2><a href="blog.html">{{ post.title }}</a></h2>
+										<p>{{ post.body }}</p>
+										</div>
+									</div>
+							</div>
+						</div>
+					</div>
+						{% endfor %} 
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+		
+{% endblock %}
+	</body>
+</html>
+
