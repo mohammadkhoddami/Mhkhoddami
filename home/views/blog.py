@@ -17,7 +17,7 @@ class BlogCreateView(IsUserAdminMixin, BlogModelMixin, generic.CreateView):
     success_url = ('home:home')
 
 
-class BlogDetailView(generic.DetailView, BlogModelMixin):
+class BlogDetailView(BlogModelMixin, generic.DetailView):
     context_object_name = 'post'
     template_name = 'home/detail-post.html'
 

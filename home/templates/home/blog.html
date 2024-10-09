@@ -29,7 +29,7 @@
 					{% for post in blog %}
 					<div class="col-md-4">
 						<div class="article animate-box">
-							<a href="blog.html" class="blog-img">
+							<a href="{{ post.get_absolute_url }}" class="blog-img">
 								<img class="img-responsive" src="{{ post.image.url }}" alt="html5 bootstrap by colorlib.com">
 								<div class="overlay"></div>
 								<div class="link">

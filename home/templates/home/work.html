@@ -28,7 +28,7 @@
 					{% for work in works %}
 					<div class="col-md-12">
 						<div class="work-entry animate-box">
-							<a href="work-single.html" class="work-img" style="background-image:  url('{{ work.image.url }}');">
+							<a href="{{ work.get_absolute_url }}" class="work-img" style="background-image:  url('{{ work.image.url }}');">
 								<div class="display-t">
 									<div class="work-name">
 										<h2>{{ work.title }}</h2>
@@ -38,7 +38,7 @@
 							<div class="col-md-4 col-md-offset-4">
 								<div class="desc">
 									<p>{{ work.body|truncatewords:50 }}</p>
-									<p class="read"><a href="#">{% trans "View details" %}</a></p>
+									<p class="read"><a href="{{ work.get_absolute_url }}">{% trans "View details" %}</a></p>
 								</div>
 							</div>
 						</div>

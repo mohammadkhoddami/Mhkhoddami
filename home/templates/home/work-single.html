@@ -13,8 +13,7 @@
 				</div>
 				<div class="row">
 					<div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
-						<span>{% trans "Project" %}</span>
-						<h2>{{ work.title }}</h2>
+						<h2> {% trans "details of" %} {{ work.title }}</h2>
 					</div>
 				</div>
 				<div class="row">
@@ -27,16 +26,19 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="work-entry animate-box">
-							<a href="work.html" class="work-img" style="background-image: url(images/work-1.jpg);">
+							<a href="work.html" class="work-img" style="background-image: url('{{ work.image.url }}');">
 							</a>
-							<div class="col-md-8 col-md-offset-2">
+							<div class="col-md-12 ">
 								<div class="desc">
+									<img class="img-responsive" src="{{ work.image.url }}" alt="html5 bootstrap template by colorlib.com"><br>
+									<div lang='fa' dir='rtl'>
 									<h2>{{ work.title }}</h2>
 									<p>{{ work.body|linebreaks }}</p>
-									{% if work.image_2 %}
-									<img class="img-responsive" src="{{ work.image_2.url }}" alt="html5 bootstrap template by colorlib.com"><br>
-									{% endif %}
-									<p class="read"><a href="#">{% trans "Live Preview" %}</a></p>
+									<br/>
+									<div lang='fa' dir="rtl">
+									<p class="read"><a href="{{ work.link }}">- {% trans "Source Code" %} -</a></p>
+								</div>	
+								</div>
 								</div>
 							</div>
 						</div>

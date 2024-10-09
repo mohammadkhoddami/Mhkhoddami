@@ -11,7 +11,7 @@
 				</div>
 				<div class="row row-padded-bottom">
 					<div class="col-md-5 animate-box">
-						<img class="img-responsive about-img" src="images/about.jpg" alt="html5 bootstrap template by colorlib.com">
+						<img class="img-responsive about-img" src="{{ about_me.image.url }}" alt="Nothin to show">
 					</div>
 					<div class="col-md-6 col-md-push-1 animate-box">
 						<div class="about-desc">
@@ -20,14 +20,10 @@
 								<div class="rotate">
 									<h2 class="heading">"About"</h2>
 								</div>
+								<div lang="fa" dir="rtl">
 								<p>{{ about_me.mini_bio }}</p>
-								<p class="colorlib-social-icons">
-									<a href="#"><i class="icon-facebook4"></i></a>
-									<a href="#"><i class="icon-twitter3"></i></a>
-									<a href="#"><i class="icon-googleplus"></i></a>
-									<a href="#"><i class="icon-dribbble2"></i></a>
-								</p>
-								<p><a href="work.html" class="btn btn-primary btn-outline">{% trans "View My Works" %}</a></p>
+								</div>
+								<p><a href="{{ about_me.cv_file }}" class="btn btn-primary btn-outline">{% trans "Contact Me!" %}</a></p>
 							</div>
 						</div>
 					</div>

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-06 18:21+0330\n"
-"PO-Revision-Date: 2024-10-06 18:22+0330\n"
+"POT-Creation-Date: 2024-10-09 18:49+0330\n"
+"PO-Revision-Date: 2024-10-09 18:50+0330\n"
 "Last-Translator:   <123@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -24,30 +24,30 @@ msgid "Phone Number Must Be String"
 msgstr "لطفا شماره تلفن را به صورت صحیح وارد کنید "
 
 #: .\home\templates\home\about.html:10 .\home\templates\home\index.html:15
-#: .\templates\inc\_nav.html:22
+#: .\templates\inc\_nav.html:18
 msgid "About"
 msgstr "درباره"
 
-#: .\home\templates\home\about.html:30
-msgid "View My Works"
-msgstr "بعضی ازپروژه های من "
+#: .\home\templates\home\about.html:26 .\home\templates\home\index.html:45
+msgid "Contact Me!"
+msgstr "دانلود رزومه"
 
 #: .\home\templates\home\blog.html:13 .\home\templates\home\blog.html:17
-#: .\home\templates\home\index.html:140 .\home\templates\home\index.html:144
-#: .\templates\inc\_nav.html:21
+#: .\home\templates\home\index.html:142 .\home\templates\home\index.html:146
+#: .\templates\inc\_nav.html:17
 msgid "Blog"
 msgstr "وبلاگ"
 
-#: .\home\templates\home\blog.html:18 .\home\templates\home\index.html:145
+#: .\home\templates\home\blog.html:18 .\home\templates\home\index.html:147
 msgid "Read Our Case"
 msgstr "خواندن مقاله های من"
 
-#: .\home\templates\home\blog.html:36 .\home\templates\home\index.html:165
+#: .\home\templates\home\blog.html:36 .\home\templates\home\index.html:167
 msgid "Read more"
 msgstr "خواندن بیشتر"
 
 #: .\home\templates\home\contact.html:13 .\home\templates\home\contact.html:17
-#: .\templates\inc\_nav.html:23
+#: .\templates\inc\_nav.html:19
 msgid "Contact"
 msgstr "راه ارتباطی "
 
@@ -75,70 +75,66 @@ msgstr "ایمیل"
 msgid "Phone Number"
 msgstr "شماره تلفن"
 
-#: .\home\templates\home\experiences.html:13
+#: .\home\templates\home\experiences.html:14
 msgid "Experiences"
 msgstr "تجربیات"
 
-#: .\home\templates\home\experiences.html:21
-#: .\home\templates\home\index.html:61
+#: .\home\templates\home\experiences.html:22
+#: .\home\templates\home\index.html:63
 msgid "My Experiences"
 msgstr "تجربیات من "
 
-#: .\home\templates\home\experiences.html:22
+#: .\home\templates\home\experiences.html:23
 msgid "Here Are Some of My Experiences"
 msgstr "برخی از تجربیات من"
 
 #: .\home\templates\home\experiences.html:37
-#: .\home\templates\home\index.html:76
+#: .\home\templates\home\index.html:78
 msgid "Current"
 msgstr "تا اکنون"
 
+#: .\home\templates\home\experiences.html:56
 #: .\home\templates\home\experiences.html:60
-#: .\home\templates\home\experiences.html:64
 msgid "Skills"
 msgstr "مهارت ها"
 
-#: .\home\templates\home\experiences.html:65
+#: .\home\templates\home\experiences.html:61
 msgid "My Skills"
 msgstr "مهارت های من"
 
-#: .\home\templates\home\index.html:43
-msgid "Contact Me!"
-msgstr "دانلود رزومه"
-
-#: .\home\templates\home\index.html:53
+#: .\home\templates\home\index.html:55
 msgid "Experience"
 msgstr "تجربه ها"
 
-#: .\home\templates\home\index.html:62
+#: .\home\templates\home\index.html:64
 msgid "Here Are Some of My Experience"
 msgstr "برخی از تجربیات من "
 
-#: .\home\templates\home\index.html:98
+#: .\home\templates\home\index.html:100
 #: .\home\templates\home\work-single.html:12
-#: .\home\templates\home\work.html:12 .\templates\inc\_nav.html:29
+#: .\home\templates\home\work.html:12 .\templates\inc\_nav.html:25
 msgid "Works"
 msgstr "پروژه ها"
 
-#: .\home\templates\home\index.html:102
+#: .\home\templates\home\index.html:104
 msgid "Portfolio"
 msgstr "پروژه ها"
 
-#: .\home\templates\home\index.html:103 .\home\templates\home\work.html:17
+#: .\home\templates\home\index.html:105 .\home\templates\home\work.html:17
 msgid "Done Projects"
 msgstr "پروژه های انجام شده "
 
-#: .\home\templates\home\index.html:127 .\home\templates\home\work.html:41
+#: .\home\templates\home\index.html:129 .\home\templates\home\work.html:41
 msgid "View details"
 msgstr "دیدن جزییات"
 
 #: .\home\templates\home\work-single.html:16
-msgid "Project"
-msgstr "پروژه "
+msgid "details of"
+msgstr "جزییاتِ"
 
 #: .\home\templates\home\work-single.html:39
-msgid "Live Preview"
-msgstr "توضیحات بیشتر"
+msgid "Source Code"
+msgstr "مشاهده ی Source Code"
 
 #: .\home\templates\home\work.html:16
 msgid "Projects"
@@ -168,17 +164,26 @@ msgstr ""
 msgid "GitHub"
 msgstr "گیت هاب"
 
-#: .\templates\inc\_nav.html:18
+#: .\templates\inc\_nav.html:14
 msgid "Home"
 msgstr "خانه"
 
-#: .\templates\inc\_nav.html:19
+#: .\templates\inc\_nav.html:15
 msgid "Services"
 msgstr "تجربیات"
 
-#: .\templates\inc\_nav.html:20
+#: .\templates\inc\_nav.html:16
 msgid "Work"
 msgstr "پروژه ها"
+
+#~ msgid "View My Works"
+#~ msgstr "بعضی ازپروژه های من "
+
+#~ msgid "Project"
+#~ msgstr "پروژه "
+
+#~ msgid "Live Preview"
+#~ msgstr "توضیحات بیشتر"
 
 #~ msgid "Let's Talk"
 #~ msgstr "ارتباط با من "

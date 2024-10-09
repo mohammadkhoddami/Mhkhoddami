@@ -9,4 +9,4 @@ class Blog(BaseTimestampModel,models.Model):
     meta_body = models.TextField(null=True, blank=True)
 
     def get_absolute_url(self):
-        return reverse('home:blog-detail', kwargs={'id': self.id})
+        return reverse('home:blog-detail', kwargs={'pk': self.pk})

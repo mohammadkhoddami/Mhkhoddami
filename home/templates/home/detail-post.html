@@ -12,7 +12,7 @@
 				</div>
 			</div>
 			<div class="three-forth">
-				<div class="intro-img" style="background-image: url('{{ blog.image.url }}');"></div>
+				<div class="intro-img" style="background-image: url('{{ post.image.url }}');"></div>
 			</div>
 		</div>
 
@@ -21,19 +21,11 @@
 				<div class="row">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="blog-entry animate-box col-pb-sm">
-							<a href="blog.html" class="blog-img"><img src="{{ blog.image.url }}" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
+							<a class="blog-img"><img src="{{ post.image.url }}" class="img-responsive" alt="HTML5 Bootstrap Template by colorlib.com"></a>
 							<div class="desc">
-								<h3><a href="blog.html">{{ post.title }}</a></h3>
+								<h2>{{ post.title }}</h2>
 								<span><small>{{ post.created_at }} </small></span>
 								<p class="first-letra">{{ post.body|linebreaks }}</p>
-								<p class="tags">
-									<a href="#">Fashion</a>
-									<a href="#">Beauty</a>
-									<a href="#">Health</a>
-									<a href="#">BLog</a>
-									<a href="#">Travel</a>
-									<a href="#">Summer</a>
-								</p>
 							</div>
 						</div>
 					</div>

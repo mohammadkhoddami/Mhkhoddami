@@ -15,7 +15,7 @@ class WorkCreate(IsUserAdminMixin, WorkModelMixin, generic.CreateView):
     template_name = 'home/work-create.html'
     context_object_name = 'form'
 
-class WorkDetail(generic.DetailView, WorkModelMixin):
+class WorkDetail(WorkModelMixin, generic.DetailView):
     context_object_name = 'work'
     template_name = 'home/work-single.html'
 

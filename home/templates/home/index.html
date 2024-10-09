@@ -42,7 +42,7 @@
 								<div lang='fa' dir='rtl'>
 								<p>{{ about_me.mini_bio|linebreaks }}</p>
 								</div>
-								<p><a href="#" class="btn btn-primary btn-outline">{% trans "Contact Me!" %}</a></p>
+								<p><a href= "{{ about_me.cv_file.url }}" class="btn btn-primary btn-outline">{% trans "Contact Me!" %}</a></p>
 							</div>
 						</div>
 					</div>
@@ -116,7 +116,7 @@
 				{% for work in works %}
 					<div class="col-md-12">
 						<div class="work-entry animate-box">
-							<a href="work.html" class="work-img" style="background-image: url('{{ work.image.url }}');">
+							<a href="{{ work.get_absolute_url }}" class="work-img" style="background-image: url('{{ work.image.url }}');">
 								<div class="display-t">
 									<div class="work-name">
 										<h2 lang='fa' dir='rtl'>{{ work.title }}</h2>
@@ -160,7 +160,7 @@
 							<div class='card-body'>
 							<div class="col-md-4">
 								<div class="article">
-									<a href="blog.html" class="blog-img">
+									<a href="{{ post.get_absolute_url }}" class="blog-img">
 										<img class="img-responsive" src="{{ post.image.url }}" alt="ops!">
 										<div class="overlay"></div>
 										<div class="link">
@@ -170,7 +170,7 @@
 									<div class="desc">
 										<span class="meta">{{ post.created_at }}</span>
 										<div lang='fa' dir='rtl'>
-										<h2><a href="blog.html">{{ post.title }}</a></h2>
+										<h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
 										<p>{{ post.body }}</p>
 										</div>
 									</div>
