@@ -12,24 +12,36 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os 
-import environ
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-env = environ.Env()
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('DJANGO_SECRET_KEY')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool('DJANGO_DEBUG', 'False')
+DEBUG = os.environ.get('DJANGO_DEBUG', 'False')
 
-ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['127.0.0.1'])
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', default=['127.0.0.1'])
+
+#For Deployment
+# SECURE_HSTS_SECONDS = 31536000
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_PRELOAD = True
+# SECURE_BROWSER_XSS_FILTER = True
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# SECURE_SSL_REDIRECT = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+#prodcution secret key
+# django-secure-CGuWM12RWuwxu3NogKI3KFgKi7CRyMNoJS3OdDhu1IEblZJC9HbNZsTqlbPs41WAMr--EFAlDWOT-IVWoA_giQ
+
+
 
 
 # Application definition
@@ -78,6 +90,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'core.context_processors.work_processor',
+                'core.context_processors.blog_seo'
             ],
         },
     },
@@ -92,11 +105,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('POSTGRES_NAME'),
-        'USER': env('POSTGRES_USER'),
-        'PASSWORD': env('POSTGRES_PASSWORD'),
-        'HOST': env('POSTGRES_HOST'),
-        'PORT': env('POSTGRES_PORT'),
+        'NAME': os.environ.get('POSTGRES_NAME'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'HOST': os.environ.get('POSTGRES_HOST'),
+        'PORT': os.environ.get('POSTGRES_PORT'),
     }
 }
 
@@ -160,11 +173,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Django Aws Config ...
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-AWS_ACCESS_KEY_ID = env('AWS_ACCESS_ID')
-AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_KEY')
-AWS_S3_ENDPOINT_URL = env('AWS_ENDPOINT')
-AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_NAME')
-AWS_S3_REGION_NAME = env('AWS_S3_REGION')
-AWS_S3_SIGNATURE_VERSION = env('AWS_S3_SIGNATURE')
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_KEY')
+AWS_S3_ENDPOINT_URL = os.environ.get('AWS_ENDPOINT')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_NAME')
+AWS_S3_REGION_NAME = os.environ.get('AWS_S3_REGION')
+AWS_S3_SIGNATURE_VERSION = os.environ.get('AWS_S3_SIGNATURE')
 AWS_S3_FILE_OVERWRITE = False
 AWS_LOCAL_STORAGE = f'{BASE_DIR}/aws/'
+

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-09 18:49+0330\n"
-"PO-Revision-Date: 2024-10-09 18:50+0330\n"
+"POT-Creation-Date: 2024-10-10 21:54+0330\n"
+"PO-Revision-Date: 2024-10-10 21:55+0330\n"
 "Last-Translator:   <123@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -147,6 +147,10 @@ msgstr "پیام شما با موفقیت ارسال شد "
 #: .\home\views\contact.py:25
 msgid "Please fill all fields"
 msgstr "لطفا اطلاعات را به صورت صحیح و کامل وارد نمایید"
+
+#: .\templates\_base.html:13
+msgid "Mohammad Hasan Khoddami"
+msgstr "محمد حسن خدامی"
 
 #: .\templates\inc\_footer.html:10
 msgid "My Github"
