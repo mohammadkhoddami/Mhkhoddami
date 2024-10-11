@@ -27,7 +27,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', 'False')
 
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', default=['127.0.0.1'])
+allowed_hosts = os.environ.get('DJANGO_ALLOWED_HOSTS', '127.0.0.1').split(',')
+ALLOWED_HOSTS = allowed_hosts
 
 #For Deployment
 # SECURE_HSTS_SECONDS = 31536000
@@ -39,7 +40,7 @@ ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', default=['127.0.0.1'])
 # SESSION_COOKIE_SECURE = True
 # CSRF_COOKIE_SECURE = True
 #prodcution secret key
-# django-secure-CGuWM12RWuwxu3NogKI3KFgKi7CRyMNoJS3OdDhu1IEblZJC9HbNZsTqlbPs41WAMr--EFAlDWOT-IVWoA_giQ
+
 
 
 
